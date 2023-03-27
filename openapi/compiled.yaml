@@ -1,0 +1,41 @@
+openapi: 3.0.1
+info:
+  title: Max drive
+  version: 0.1.0
+  description: ma
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: Henry
+    email: tochihenry28@gmail.com
+  termsOfService: 'http://localhost:4000/terms/'
+servers:
+  - url: 'http://localhost:4000'
+    description: local
+tags:
+  - name: Weather report
+    description: |
+paths:
+  /api/weather-station/report:
+    get:
+      summary: "get weather report"
+      description: "Returns an array of city, tempeature and humidity"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "keyword"
+          in: "query"
+          description: "A keyword to filter the user list by."
+          type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "array"
+        400:
+          description: "Bad request"
+        404:
+          description: "Resource not found"
+        500:
+          description: "Internal server Error"

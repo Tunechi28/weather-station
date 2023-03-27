@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install -g nodemon ts-node typescript
+      - sudo rm -rf node_modules package-lock.json 
+      - npm install
+      - npm start
+  build:
+    commands:
+      - echo Build completed on `date`
